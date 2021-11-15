@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <Pattern>
+                %red(%d{ISO8601}) %highlight(%-5level) [%cyan(%t)] %green(%C{1}): %msg%n%throwable
+            </Pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.springframework" level="info" />
+    <logger name="org.springframework.transaction" level="info" />
+
+    <!-- in order to debug some marshalling issues, this needs to be TRACE -->
+    <logger name="org.springframework.web.servlet.mvc" level="info" />
+
+    <root level="info">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+</configuration>
